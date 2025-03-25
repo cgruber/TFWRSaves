@@ -1,7 +1,7 @@
 import planting
 from watering import water
 from globals import world_size
-from globals import plots
+from globals import power_threshold
 from move import here
 from move import move_to
 from planting import smart_harvest
@@ -18,8 +18,8 @@ def scan_flowers():
     return flowers    
     
 def loop(entity):
-    if num_items(Items.Power) > 20 * plots:
-        quick_print("Power at ", num_items(Items.Power), "/", 20 * plots, "... skipping.")  
+    if num_items(Items.Power) > power_threshold:
+        quick_print("Power at ", num_items(Items.Power), "/", power_threshold, "... skipping.")  
         return
     planting.loop(entity)
     petals_index = scan_flowers()

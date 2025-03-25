@@ -42,6 +42,7 @@ def enrich(base_entity):
         "hat": base_entity[4],
         "logic": base_entity[5],
         "deps": deps(base_entity[0]),
+        "metrics": []
     }
     entities[key] = enriched
 
